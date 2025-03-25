@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const TIKTOK_CLIENT_KEY = 'sbawh5jwr50tttl4l9'; // Thay bằng client key của bạn
 const REDIRECT_URI = 'https://dzew7cvh3rahv.cloudfront.net/callback'; // Redirect URI đã đăng ký trên TikTok
-const SCOPES = 'user.info.basic'; // Chọn scope phù hợp
+const SCOPES = 'user.info.basic, video.publish'; // Chọn scope phù hợp
 
 
 const Home = () => {

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
+import UploadVideoForm from './UploadVideoForm';
 
 const Callback = () => {
     const [response, setResponse] = useState('');
+    const [accessToken, setAccessToken] = useState(null);
     const location = useLocation();
 
 
@@ -23,6 +25,7 @@ const Callback = () => {
             axios.post('http://localhost:8088/tiktok/exchange-token', { code, state })
                 .then(response => {
                     console.log('Access token:', response.data);
+                    setAccessToken(response.data.access_token)
                 })
                 .catch(error => {
                     console.error('Error exchanging token:', error);
@@ -34,6 +37,8 @@ const Callback = () => {
         <div style={{ paddingLeft: '20%' }}>
             <h2>Callback Page</h2>
             <p>Response from /callback API: {response}</p>
+
+            {accessToken && <UploadVideoForm accessToken={accessToken} />}
         </div>
     );
 };
