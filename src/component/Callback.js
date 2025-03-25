@@ -18,17 +18,15 @@ const Callback = () => {
         const code = queryParams.get('code');
         const state = queryParams.get('state');
 
-        console.log('code : ' + code);
-        console.log('state : ' + state);
         if (code) {
             // Gửi code về backend để exchange lấy token
-            // axios.post('http://localhost:8088/tiktok/exchange-token', { code, state })
-            //     .then(response => {
-            //         console.log('Access token:', response.data);
-            //     })
-            //     .catch(error => {
-            //         console.error('Error exchanging token:', error);
-            //     });
+            axios.post('http://localhost:8088/tiktok/exchange-token', { code, state })
+                .then(response => {
+                    console.log('Access token:', response.data);
+                })
+                .catch(error => {
+                    console.error('Error exchanging token:', error);
+                });
         }
     }, [location]);
 
