@@ -21,7 +21,7 @@ const UploadVideoForm = ({ accessToken }) => {
         formData.append('accessToken', accessToken);
 
         try {
-            const response = await axios.post('http://localhost:8080/api/tiktok/upload', formData, {
+            const response = await axios.post('http://localhost:8080/tiktok/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
