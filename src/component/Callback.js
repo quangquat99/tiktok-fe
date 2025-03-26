@@ -40,8 +40,6 @@ const Callback = () => {
             <h2>Callback Page</h2>
             <p>Response from /callback API: {response}</p>
 
-            <UploadVideoForm accessToken={accessToken} />
-            <UploadImagesForm accessToken={accessToken} />
             {accessToken && <UploadVideoForm accessToken={accessToken} />}
             {accessToken && <UploadImagesForm accessToken={accessToken} />}
         </div>
