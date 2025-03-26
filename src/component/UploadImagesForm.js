@@ -14,7 +14,10 @@ const UploadImagesForm = ({ accessToken }) => {
                 null,
                 { params: { accessToken } }
             );
-            setCreatorInfo(JSON.parse(response.data));
+
+            console.log('response : ' + response);
+            console.log(typeof response.data);
+            setCreatorInfo(response.data);
         } catch (error) {
             alert('Lỗi khi lấy thông tin creator');
         }
