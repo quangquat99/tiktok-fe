@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
-const TIKTOK_CLIENT_KEY = 'sbawh5jwr50tttl4l9'; // Thay bằng client key của bạn
+const TIKTOK_CLIENT_KEY = 'sbaw2n3ny5jk1knzha'; // Thay bằng client key của bạn
 const REDIRECT_URI = 'https://dzew7cvh3rahv.cloudfront.net/callback'; // Redirect URI đã đăng ký trên TikTok
 const SCOPES = 'user.info.basic,video.publish'; // Chọn scope phù hợp
 
