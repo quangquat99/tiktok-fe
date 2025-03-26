@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import UploadVideoForm from './UploadVideoForm';
+import UploadImagesForm from './UploadImagesForm';
 
 const Callback = () => {
     const [response, setResponse] = useState('');
@@ -35,10 +36,14 @@ const Callback = () => {
 
     return (
         <div style={{ paddingLeft: '20%' }}>
+
             <h2>Callback Page</h2>
             <p>Response from /callback API: {response}</p>
 
+            <UploadVideoForm accessToken={accessToken} />
+            <UploadImagesForm accessToken={accessToken} />
             {accessToken && <UploadVideoForm accessToken={accessToken} />}
+            {accessToken && <UploadImagesForm accessToken={accessToken} />}
         </div>
     );
 };

@@ -21,7 +21,7 @@ const UploadVideoForm = ({ accessToken }) => {
         formData.append('accessToken', accessToken);
 
         try {
-            const response = await axios.post('http://localhost:8088/tiktok/upload', formData, {
+            const response = await axios.post('http://localhost:8088/tiktok/upload-video', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -36,6 +36,7 @@ const UploadVideoForm = ({ accessToken }) => {
 
     return (
         <div className="p-4">
+            <h4>Upload video</h4>
             <form onSubmit={handleSubmit}>
                 <input type="file" accept="video/mp4" onChange={handleFileChange} />
                 <button type="submit" className="ml-4 p-2 bg-blue-500 text-white rounded">
